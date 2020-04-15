@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Books</title>
+
+    <link rel="stylesheet" href="../css/userPanel.css">
+    <link rel="stylesheet" href="../css/library.css">
+
+    <script type="text/javascript" src="../scripts/userPanel.js"></script>
+    <script type="text/javascript" src="../scripts/library.js"></script>
+
+    <style media="screen">
+      <% if(!data.session.loggedin){ %>
+        #checkoutPanel {
+          display: none;
+        }
+      <% } %>
+    </style>
+
+  </head>
+  <body>
+
+    <%- include("../partials/user")%>
+
+    <div class="main" id="main">
+      <button type="button" name="button" id="toggleUser" onclick="closeUser()"><i class="material-icons">menu</i></button>
+      <% if(data.session.loggedin){ %>
+        <%- include("../partials/loginHeader") %>
+      <% } else { %>
+        <%- include("../partials/header") %>
+      <% } %>
+
+      <%- include("../partials/header") %>
+
+      <div class="searchPanel">
+        <select class="searchType" id="searchType" name="">
+          <option value="title">Title</option>
+          <option value="author">Author</option>
+          <option value="ISBN10">ISBN10</option>
+          <option value="ISBN13">ISBN13</option>
+          <option value="collection">Collection</option>
+          <option value="genre">Genre</option>
+        </select>
+
+        <span><input type="text" id="searchInput"></span>
+        <button type="button" name="button" id="searchButton" onclick="search()">Search</button>
+
+      </div>
+
+      <div class="dataPanel">
+
+        <ul style="list-style-type: none;">
+
+        <% data.books.forEach((item)=> { %>
+
+
+            <li class="bookItem" >
+              <table class="bookItemTable">
+                <tr>
+                  <td class="bookName" id="<%= item.book_id %>-title"><a href="/book/<%= item.book_id %>"><%= item.title %></a></td>
+                  <td class="bookPrice" id="<%= item.book_id %>-price">$<%= item.price %></td>
+                </tr>
+                <tr>
+                  <td class="bookAuthor"><%= item.author %></td>
+                  <td><button type="button" name="button" class="addButton" id="<%= item.book_id %>" onclick="addOrder(this.id)">Add</button></td>
+                </tr>
+              </table>
+
+            </li>
+
+
+        <% }) %>
+
+        </ul>
+
+
+
+
+
+
+
+      </div>
+
+      <div class="checkoutPanel" id="checkoutPanel">
+        <div class="checkoutTitle">
+          Checkout List:
+        </div>
+        <div class="checkoutItems" id="checkoutItems">
+
+
+
+        </div>
+        <div class="totalPrice" id="totalPrice">
+
+        </div>
+        <button type="button" name="button"  id="checkoutButton" style="margin-top: 2vh;" onclick="submit()">Checkout</button>
+      </div>
+
+
+    </div>
+
+  </body>
+</html>

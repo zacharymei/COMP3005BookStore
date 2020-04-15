@@ -1,0 +1,83 @@
+.dataPanel {
+  position: absolute;
+  top: 10vh;
+  left: 3vw;
+  width: 60vw;
+}
+
+.orderTitle {
+  margin-bottom: 3vh;
+  color: #e29465;
+}
+
+
+.orderTitleLabel {
+  font-size: 2vw;
+  color: black;
+}
+
+.orderUserLabel {
+  font-size: 1vw;
+  color: #737373;
+}
+
+.orderUser {
+  background: #87C78A;
+  border: 0;
+  border-radius: 5vw;
+  font-size: 1vw;
+  color: #314732;
+  width: 5vw;
+  height: 2.5vh;
+  padding-left: 2vw;
+  text-align: right;
+  padding-right: 1vw;
+  margin-top: 1vh;
+}
+
+.userIcon {
+  position: absolute;
+  font-size: 1.5vw;
+  color: #314732;
+  left: 0.5vw;
+}
+
+.orderInfoLabel {
+  background: #D9D9D9;
+  border: 0;
+  border-radius: 1vh;
+  color: black;
+  font-size: 1vw;
+  padding: 0.3vh 1vh;
+}
+
+
+.orderInfoData {
+  font-size: 1vw;
+  margin-bottom: 1vh;
+}
+
+.orderBooksTitle {
+  font-size: 1.5vw;
+  margin: 3vh 0;
+}
+
+.booksTable {
+  width: 100%;
+}
+
+.buttonLabel {
+  background: #595959;
+  color: #f2f2f2;
+  border: 0;
+  border-radius: 1vh;
+  font-size: 1vw;
+  padding: 0.3vh 1vh;
+  margin-bottom: 5vh;
+}
+
+#orderID {
+  font-size: 4vw;
+  color: #e29465;
+  margin-left: 3vw;
+}

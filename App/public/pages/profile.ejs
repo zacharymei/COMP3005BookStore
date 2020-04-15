@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Profile</title>
+
+    <link rel="stylesheet" href="../css/userPanel.css">
+    <link rel="stylesheet" href="../css/profile.css">
+
+
+    <script type="text/javascript" src="../scripts/userPanel.js"></script>
+
+
+    </head>
+
+  <body>
+
+    <%- include("../partials/user")%>
+
+    <div class="main" id="main">
+      <button type="button" name="button" id="toggleUser" onclick="closeUser()"><i class="material-icons">menu</i></button>
+      <% if(data.session.loggedin){ %>
+        <%- include("../partials/loginHeader") %>
+      <% } else { %>
+        <%- include("../partials/header") %>
+      <% } %>
+
+      <%- include("../partials/header") %>
+      <div class="dataPanel">
+        <div class="orderListPanel">
+          <div class="orderListTitle">
+            Orders
+          </div>
+          <div class="orderList">
+            <% data.orders.forEach((item)=>{ %>
+              <a href="/order/<%= item.order_id %>" class="orderLinks">Order ID: <%= item.order_id %></a>
+              <br>
+            <% }) %>
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </body>
+</html>

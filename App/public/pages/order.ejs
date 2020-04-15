@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Order</title>
+
+    <link rel="stylesheet" href="../css/userPanel.css">
+    <link rel="stylesheet" href="../css/order.css">
+
+    <script type="text/javascript" src="../scripts/userPanel.js"></script>
+
+  </head>
+  <body>
+
+    <%- include("../partials/user")%>
+
+    <div class="main" id="main">
+      <button type="button" name="button" id="toggleUser" onclick="closeUser()"><i class="material-icons">menu</i></button>
+      <% if(data.session.loggedin){ %>
+        <%- include("../partials/loginHeader") %>
+      <% } else { %>
+        <%- include("../partials/header") %>
+      <% } %>
+
+      <%- include("../partials/header") %>
+      <div class="dataPanel">
+        <div class="orderTitle">
+          <div class="orderTitleLabel">
+            Order
+          </div>
+
+          <br>
+          <button type="button" class="orderUser" disabled><i class="material-icons userIcon">person</i> <%= data.user.username %></button>
+        </div>
+        <div class="orderInfo">
+          <button class="orderInfoLabel">Order ID </button>
+          <div class="orderInfoData" id="orderID"><%= data.order.order_id %></div>
+          <br>
+          <button class="orderInfoLabel" >Total </button>
+          <span class="orderInfoData">$<%= data.order.total %></span>
+          <button class="orderInfoLabel" style="margin-left: 3vw;">Tracking Number </button>
+          <span class="orderInfoData"><a href="#"><%= data.order.tracking_number %></a></span>
+
+        <div class="orderBooks">
+          <div class="orderBooksTitle">
+            Books:
+          </div>
+          <table class="booksTable">
+            <tr>
+              <td><button class="buttonLabel">Title</button></td>
+              <td><button class="buttonLabel">Price</button></td>
+              <td><button class="buttonLabel">Quantity</button></td>
+            </tr>
+
+            <% data.books.forEach((item)=>{ %>
+              <tr style="height: 2vh; font-size: 1vw;">
+                <td><%= item.title %></td>
+                <td>$<%= item.price %></td>
+                  <td><%= item.quantity %></td>
+              </tr>
+            <% }) %>
+
+
+          </table>
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Users</title>
+
+    <link rel="stylesheet" href="../css/userPanel.css">
+    <link rel="stylesheet" href="../css/users.css">
+
+
+    <script type="text/javascript" src="../scripts/userPanel.js"></script>
+
+
+
+  </head>
+  <body>
+
+    <%- include("../partials/user")%>
+
+    <div class="main" id="main">
+
+      <% if(data.session.loggedin){ %>
+        <%- include("../partials/loginHeader") %>
+      <% } else { %>
+        <%- include("../partials/header") %>
+      <% } %>
+
+      <%- include("../partials/header") %>
+
+      <button type="button" name="button" id="toggleUser" onclick="closeUser()"> <i class="material-icons">menu</i> </button>
+
+      <div class="dataPanel">
+        <% data.users.forEach((user)=>{ %>
+          <a href="/user/<%= user._id %>" class="userLinks"><%= user.username %></a>
+          <br>
+        <% }) %>
+      </div>
+
+
+    </div>
+
+  </body>
+</html>

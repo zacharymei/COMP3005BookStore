@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Order</title>
+
+    <link rel="stylesheet" href="../css/userPanel.css">
+    <link rel="stylesheet" href="../css/book.css">
+
+    <script type="text/javascript" src="../scripts/userPanel.js"></script>
+
+  </head>
+  <body>
+
+    <%- include("../partials/user")%>
+
+    <div class="main" id="main">
+      <button type="button" name="button" id="toggleUser" onclick="closeUser()"><i class="material-icons">menu</i></button>
+      <% if(data.session.loggedin){ %>
+        <%- include("../partials/loginHeader") %>
+      <% } else { %>
+        <%- include("../partials/header") %>
+      <% } %>
+
+      <%- include("../partials/header") %>
+      <div class="dataPanel">
+        <div class="orderTitle">
+          <div class="orderTitleLabel">
+            Book
+          </div>
+          <span class="orderID"><%= data.book.book_id %></span>
+          <br>
+          <button type="button" class="orderUser" disabled><i class="material-icons userIcon">person</i> <%= data.book.author %></button>
+        </div>
+        <div class="orderInfo">
+          <button class="orderInfoLabel">Name </button>
+          <div class="orderInfoData"><%= data.book.title %></div>
+          <button class="orderInfoLabel">Author </button>
+          <div class="orderInfoData"><%= data.book.author %></div>
+          <button class="orderInfoLabel">ISBN10 </button>
+          <div class="orderInfoData"><%= data.book.isbn10 %></div>
+          <button class="orderInfoLabel">ISBN13 </button>
+          <div class="orderInfoData"><%= data.book.isbn13 %></div>
+          <button class="orderInfoLabel">Genre </button>
+          <div class="orderInfoData"><%= data.book.gerne %></div>
+          <button class="orderInfoLabel">Publisher </button>
+          <div class="orderInfoData"><a href="#"><%= data.book.publisher_id %></a></div>
+          <button class="orderInfoLabel">Number of Pages </button>
+          <div class="orderInfoData"><%= data.book.page %></div>
+          <button class="orderInfoLabel">Year</button>
+          <div class="orderInfoData"><%= data.book.year %></div>
+          <button class="orderInfoLabel">description</button>
+          <div class="orderInfoData" style="font-size: 1vw; width: 50%;"><%= data.book.description %></div>
+
+        </div>
+        <div class="orderDishes">
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,101 @@
+.searchPanel {
+  position: absolute;
+  top: 15vh;
+  left: 5vw;
+}
+
+.searchType {
+  height: 3vh;
+  border-radius: 1vh;
+  padding-left: 1vw;
+}
+
+#searchInput {
+  height: 3vh;
+  width: 20vw;
+  margin-left: 2vw;
+  padding-left: 1vw;
+  font-size: 1vw;
+  border: 0;
+  border-radius: 1vh;
+}
+
+#searchButton {
+  margin-left: 2vw;
+  height: 3vh;
+  border: 0;
+  border-radius: 1vh;
+  background: #e29465;
+  padding: 1vh;
+}
+
+.dataPanel {
+  position: absolute;
+  top: 20vh;
+  left: 3vw;
+  height: 80vh;
+  overflow: scroll;
+}
+
+.bookItem {
+  position: relative;
+  padding: 1vh 1vw;
+  margin: 1vh 0;
+  background: white;
+  border: 0;
+  border-radius: 1vh;
+  width: 40vw;
+
+}
+
+.bookItemTable {
+  width: 100%;
+}
+
+.bookName {
+  font-size: 1vw;
+
+}
+
+.bookAuthor {
+  width: 80%;
+}
+
+.addButton {
+  border: 0;
+  border-radius: 10vh;
+  background: #D9D9D9;
+  padding: 0.5vh 1vh;
+}
+
+.checkoutPanel {
+  position: absolute;
+  left: 55vw;
+  top: 15vh;
+  width: 10vw;
+  background: white;
+  padding: 1vw;
+  border-radius: 1vh;
+}
+
+.checkoutItemTable {
+  width: 100%;
+}
+
+.checkoutTitle {
+  font-size: 1vw;
+
+}
+
+#checkoutButton {
+  border: 0;
+  border-radius: 10vh;
+  background: #D9D9D9;
+  padding: 0.5vh 1vh;
+}
+
+#removeButton {
+  border: 0;
+  border-radius: 10vh;
+  background: #C78273;
+}

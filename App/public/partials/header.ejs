@@ -1,0 +1,41 @@
+<style media="screen">
+  .headerPanel {
+    position: absolute;
+    top: 5vh;
+    left: 9vw;
+  }
+
+  .headerButton, .headerButton:visited {
+    position: absolute;
+    display: inline-block;
+    border: 0;
+    border-radius: 10vh;
+    text-align: center;
+    vertical-align: text-middle;
+    background: #D9D9D9;
+    width: 7vw;
+    height: 2.5vh;
+    font-size: 1vw;
+    text-decoration: none;
+    padding-top: 0.2vh;
+    color: #737373;
+  }
+
+  .headerButton:hover {
+    color: black;
+    background: #E29465;
+    transition: 0.5s;
+  }
+
+  #goHome {
+    left: 0;
+  }
+  #goLibrary {
+    left: 9vw;
+  }
+</style>
+
+<div class="headerPanel">
+  <a href="/" class="headerButton" id="goHome">Home</a>
+  <a href="/library" class="headerButton" id="goLibrary">Library</a>
+</div>

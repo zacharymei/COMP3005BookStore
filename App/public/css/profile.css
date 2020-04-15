@@ -1,0 +1,36 @@
+.dataPanel {
+  position: absolute;
+  top: 10vh;
+  left: 3vw;
+}
+
+.orderListTitle {
+  padding-left: 1vw;
+  font-size: 2vw;
+}
+
+.orderList {
+  background: #D9D9D9;
+  border-radius: 1vw;
+  padding: 1vw;
+  width: 60vw;
+}
+
+.orderLinks, .orderLinks:visited {
+  display: inline-block;
+  font-size: 1vw;
+  background: Transparent;
+  color: black;
+}
+
+.orderLinks:hover {
+  background: #e29465;
+}
+
+<% if(data.user != null) {%>
+
+#authorizePanel {
+  display: none;
+}
+
+<% } %>

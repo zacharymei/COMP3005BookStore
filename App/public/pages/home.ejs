@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="../css/userPanel.css">
+    <link rel="stylesheet" href="../css/home.css">
+
+    <style media="screen">
+      <% if(!data.session.loggedin){ %>
+        #addPanel {
+          display: none;
+        }
+      <% } %>
+    </style>
+
+    <script type="text/javascript" src="../scripts/userPanel.js">
+
+    </script>
+
+  </head>
+  <body>
+
+    <%- include("../partials/user")%>
+
+    <div class="main" id="main">
+      <button type="button" name="button" id="toggleUser" onclick="closeUser()"><i class="material-icons">menu</i></button>
+      <% if(data.session.loggedin){ %>
+        <%- include("../partials/loginHeader") %>
+      <% } else { %>
+        <%- include("../partials/header") %>
+      <% } %>
+
+      <%- include("../partials/header") %>
+      <div class="dataPanel">
+        Welcome Home
+        <div class="designedByLabel">Designed by</div>
+        <div class="designedBy">Jiaming Mei</div>
+      </div>
+
+      <div class="addPanel" id="addPanel">
+        <form class="" action="index.html" method="post">
+
+          <table style="width: 80%;">
+            <tr>
+              <td style="width: 50%;">
+                <label for="title" class="addLabel">Title</label><br>
+                <input type="text" name="title" class="addInput" value="" required><br>
+                <label for="isbn10" class="addLabel">ISBN10</label><br>
+                <input type="text" name="isbn10" class="addInput" value="" required><br>
+                <label for="isbn13" class="addLabel">ISBN13</label><br>
+                <input type="text" name="isbn13" class="addInput" value="" required><br>
+                <label for="author" class="addLabel">Author</label><br>
+                <input type="text" name="author" class="addInput" value="" required><br>
+                <label for="year" class="addLabel">Year</label><br>
+                <input type="text" name="year" class="addInput" value="" required><br>
+                <label for="page" class="addLabel">Page</label><br>
+                <input type="text" name="page" class="addInput" value="" required><br>
+              </td>
+              <td>
+                <label for="genre" class="addLabel">Genre</label><br>
+                <input type="text" name="genre" class="addInput" value="" required><br>
+                <label for="description" class="addLabel">Description</label><br>
+                <input type="text" name="description" class="addInput" value="" required><br>
+                <label for="publisher" class="addLabel">Publisher</label><br>
+                <input type="text" name="publisher" class="addInput" value="" required><br>
+                <label for="collection" class="addLabel">Collection</label><br>
+                <input type="text" name="collection" class="addInput" value="" required><br>
+                <label for="price" class="addLabel">Price</label><br>
+                <input type="text" name="price" class="addInput" value="" required><br>
+                <label for="percentage" class="addLabel">Percentage</label><br>
+                <input type="text" name="precentage" class="addInput" value="" required><br>
+
+              </td>
+            </tr>
+          </table>
+
+          <input type="submit" name="" value="Add" id="submitAdd">
+
+
+        </form>
+
+
+      </div>
+
+
+    </div>
+
+  </body>
+</html>

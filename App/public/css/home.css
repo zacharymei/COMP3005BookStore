@@ -1,0 +1,67 @@
+.addPanel {
+  position: absolute;
+  top: 30vh;
+  left: 3vw;
+  font-size: 1vw;
+  width: 50vw;
+}
+
+.addLabel {
+  color: black;
+  display: inline-block;
+  border: 0;
+  border-radius: 10vh;
+  background: #D9D9D9;
+  padding: 0 1vh;
+  font-size: 0.7vw;
+  margin-right: 3vw;
+}
+
+.addInput {
+  border: 0;
+  border-radius: 1vh;
+  background: white;
+  color: black;
+  padding-left: 1vw;
+  height: 3vh;
+  width: 15vw;
+  margin-bottom: 2vh;
+}
+
+#submitAdd {
+  position: absolute;
+  right: 0;
+  bottom: 2vh;
+  width: 7vw;
+  height: 5vh;
+  border: 0;
+  border-radius: 1vw;
+  background: #87C78A;
+  font-size: 1vw;
+}
+
+.dataPanel {
+  position: absolute;
+  top: 17vh;
+  left: 3vw;
+  font-size: 1vw;
+}
+
+.designedByLabel {
+  font-size: 0.7vw;
+  padding: 0.2vh;
+  border: 0;
+  border-radius: 0.5vh;
+  background: #D9D9D9;
+  margin-top: 2vh;
+}
+
+.designedBy {
+  font-size: 1vw;
+  margin-top: 2vh;
+  margin-left: 1vw;
+  padding: 0.2vh 0.4vh;
+  border: 0;
+  border-radius: 0.5vh;
+  background: #D9D9D9;
+}

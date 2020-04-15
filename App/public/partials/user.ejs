@@ -1,0 +1,358 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style media="screen">
+
+  .userPanel {
+    position: fixed;
+    background: #2F3640;
+    height: 100%;
+    width: 27vw;
+    left: 0;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+  .namePanel {
+    position: absolute;
+    left: 3vw;
+    top: 13vh;
+    height: 10vh;
+  }
+
+  #iconUser {
+    position: absolute;
+    bottom: 0;
+    font-size: 7vw;
+    color: #87C78A;
+  }
+
+  <% if(data.session.loggedin) {%>
+
+  #iconUser {
+    color: #87C78A;
+  }
+
+  <% } else {%>
+
+    #iconUser {
+      color: #E29465;
+    }
+
+  <% }%>
+
+  #helloUser {
+    position: absolute;
+    bottom: 0.7vh;
+    left: 9vw;
+    font-size: 3vw;
+    color: #f2f2f2;
+  }
+
+  .loginForm {
+    position: absolute;
+    left: 3vw;
+    top: 10vh;
+    color: #F2F2F2;
+    //display: none;
+  }
+
+  .registerForm {
+    position: absolute;
+    left: 3vw;
+    top: 10vh;
+    color: #F2F2F2;
+    display: none;
+  }
+
+  .loginForm input, .registerForm input{
+    background: #38404D;
+    border: 0;
+    border-radius: 1vh;
+    height: 4vh;
+    width: 21vw;
+    font-size: 1vw;
+    padding-left: 1vw;
+    color: #f2f2f2;
+  }
+
+
+  .labelUsername {
+    position: absolute;
+    top: 20vh;
+    font-size: 1vw;
+  }
+
+  .inputUsername {
+    position: absolute;
+    top: 23vh;
+
+  }
+
+  .labelPassword {
+    position: absolute;
+    top: 30vh;
+    font-size: 1vw;
+  }
+
+  .inputPassword {
+    position: absolute;
+    top: 33vh;
+  }
+
+  #labelFirst_name {
+    position: absolute;
+    width: 10vw;
+    top: 40vh;
+  }
+
+  #inputFirst_name {
+    position: absolute;
+    top: 43vh;
+  }
+
+  #labelLast_name {
+    position: absolute;
+    width: 10vw;
+    top: 50vh;
+  }
+
+  #inputLast_name {
+    position: absolute;
+    top: 53vh;
+  }
+
+  #labelPhone_number {
+    position: absolute;
+    width: 15vw;
+    top: 60vh;
+  }
+
+  #inputPhone_number {
+    position: absolute;
+    top: 63vh;
+  }
+
+  #login {
+    position: absolute;
+    top: 40vh;
+    width: 11vw;
+    height: 3vh;
+    background: #87C78A;
+    font-size: 1vw;
+    color: black;
+  }
+
+  #register {
+    position: absolute;
+    top: 70vh;
+    width: 11vw;
+    height: 3vh;
+    background: #e29465;
+    font-size: 1vw;
+    color: black;
+  }
+
+  #buttonRegister {
+    position: absolute;
+    bottom: 5vh;
+    left: 3vw;
+    width: 21vw;
+    height: 4vh;
+    border: 0;
+    border-radius: 1vh;
+    background: #e29465;
+    font-size: 1vw;
+    //display: none;
+  }
+
+  #buttonLogin {
+    position: absolute;
+    bottom: 5vh;
+    left: 3vw;
+    width: 21vw;
+    height: 4vh;
+    border: 0;
+    border-radius: 1vh;
+    background: #87C78A;
+    font-size: 1vw;
+    display: none;
+  }
+
+  .material-icons.rightArrow {
+    position: absolute;
+    right: 1vw;
+    top: 1vh;
+  }
+
+  /* /////////////////////////////////////     privacy */
+
+  .privaryForm {
+    position: absolute;
+    left: 3vw;
+    top: 30vh;
+  }
+
+  .privaryForm input, label{
+    position: absolute;
+    font-size: 1vw;
+    color: white;
+  }
+
+  #privacy {
+    position: absolute;
+    font-size: 1vw;
+    color: white;
+  }
+
+  .selectionPrivacy {
+    position: absolute;
+    font-size: 1vw;
+    color: #f2f2f2;
+    width: 10vw;
+    height: 3vh;
+    border: 0;
+    border-radius: 1vh;
+    background: #38404D;
+  }
+
+  #privacyTrue {
+    top: 7vh;
+  }
+
+  #labelPTrue {
+    top: 3vh;
+    left: 1vw;
+  }
+
+  #privacyFalse {
+    top: 11vh;
+
+  }
+
+  #labelPFalse {
+    top: 7vh;
+    left: 1vw;
+
+  }
+
+  #save {
+    position: absolute;
+    top: 17vh;
+    font-size: 1vw;
+    border: 0;
+    border-radius: 1vh;
+    background: #e29465;
+    width: 5vw;
+    height: 2vh;
+  }
+
+  #buttonLogout {
+    position: absolute;
+    bottom: 5vh;
+    left: 3vw;
+    width: 21vw;
+    height: 4vh;
+    border: 0;
+    border-radius: 1vh;
+    background: #e29465;
+    font-size: 1vw;
+  }
+
+  <% if(data.session.privacy === true) {%>
+    #privacyTrue {
+      background: #87C78A;
+      color: black;
+    }
+  <% } %>
+  <% if(data.session.privacy === false){ %>
+    #privacyFalse {
+      background: #87C78A;
+      color: black;
+    }
+  <% } %>
+
+  <% if(data.session.loggedin) {%>
+
+  #authorizePanel {
+    display: none;
+  }
+
+  <% } else {%>
+    .profilePanel {
+      display: none;
+    }
+  <% }%>
+
+
+</style>
+
+<script type="text/javascript" src="../scripts/user.js"></script>
+
+
+
+<div class="userPanel" id="userPanel">
+
+  <div class="namePanel">
+    <i class="material-icons" id="iconUser">person</i>
+    <div id="helloUser">
+      <% if(data.session.loggedin) {%>
+      <%= data.session.username %>
+      <% }  else {%>
+        Guest
+      <% } %>
+    </div>
+  </div>
+
+  <div class="authorizePanel" id="authorizePanel">
+
+    <form class="loginForm" id="loginForm" action="/login" method="post" autocomplete="off">
+      <label for="username" class="labelUsername">Username</label>
+      <input type="text" name="username" class="inputUsername" value="" required pattern=".*\S.*">
+      <label for="password" class="labelPassword">Password</label>
+      <input type="password" name="password" class="inputPassword" value="" required pattern=".*\S.*">
+      <input type="submit" name="login" id="login" value="Login">
+
+    </form>
+
+    <button type="button" name="buttonLogin" id="buttonLogin" onclick="showLogin()">Login <i class="material-icons rightArrow" id="iconRightArrow">arrow_forward</i></button>
+    <button type="button" name="buttonRegister" id="buttonRegister" onclick="showRegister()">Register <i class="material-icons rightArrow" id="iconRightArrow">arrow_forward</i></button>
+
+    <form class="registerForm" id="registerForm" action="javascript:register()" autocomplete="off">
+      <label for="username" class="labelUsername">Username</label>
+      <input type="text" name="username" class="inputUsername" id="registerUsername" value="" required pattern=".*\S.*">
+      <label for="password" class="labelPassword">Password</label>
+      <input type="password" name="password" class="inputPassword" id="registerPassword" value="" required pattern=".*\S.*">
+      <label for="first_name" id="labelFirst_name">First Name</label>
+      <input type="text" name="first_name" value="" id="inputFirst_name" required>
+      <label for="last_name" id="labelLast_name">Last Name</label>
+      <input type="text" name="last_name" value="" id="inputLast_name" required>
+      <label for="phone_number" id="labelPhone_number">Phone Number</label>
+      <input type="text" name="phone_number" value="" id="inputPhone_number">
+      <input type="submit" name="register" id="register" value="Register">
+    </form>
+
+  </div>
+
+
+
+  <div class="profilePanel">
+
+    <form class="privaryForm" action="/privacy" method="post">
+      <div id="privacy">
+        Privacy
+      </div>
+      <input type="button" class="selectionPrivacy" id="privacyTrue" name="privacySelect" value="true" onclick="setTrue(this.id)">
+      <input type="button" class="selectionPrivacy" id="privacyFalse" name="privacySelect" value="false" onclick="setFalse(this.id)">
+      <button type="submit" name="privacy" id="save" value="">Save</button>
+    </form>
+
+    <form class="" action="/logout" method="post">
+      <input type="submit" id="buttonLogout" name="buttonLogout" value="Logout">
+    </form>
+
+
+
+
+  </div>
+
+</div>

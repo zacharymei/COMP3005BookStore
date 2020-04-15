@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #F2F2F2;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+
+
+#main {
+  position: absolute;
+  transition: margin-left .5s;
+  width: 100vw;
+  height: 100vh;
+  transition: 0.5s;
+  left: 27vw;
+  padding: 3vw;
+}
+
+#toggleUser {
+  position: absolute;
+  background: Transparent;
+  border: 0;
+  top: 5vh;
+  left: 3vw;
+  font-size: 1.5vw;
+  outline: 0;
+  transition: all 0.5s;
+}
+
+#toggleUser:active {
+  outline: 0;
+}
+
+#toggleUser:hover {
+  transform: rotate(90deg);
+  transition: all 0.5s;
+}

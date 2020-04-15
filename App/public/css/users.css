@@ -1,0 +1,20 @@
+.dataPanel {
+  position: absolute;
+  top: 13vh;
+  left: 3vw;
+}
+
+.userLinks {
+  display: inline-block;
+  border: 0;
+  border-radius: 5vw;
+  background: Transparent;
+  //text-decoration: none;
+  color: black;
+  padding: 0vh 1vh;;
+  font-size: 1vw;
+}
+
+.userLinks:hover {
+  background: #e29465;
+}
