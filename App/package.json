@@ -1,7 +1,7 @@
 {
-  "name": "comp2406a04",
+  "name": "comp3005project",
   "version": "1.0.0",
-  "description": "COMP 2406 Assignment 4 by Jiaming Mei",
+  "description": "COMP3005 Bookstore by Jiaming Mei",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
