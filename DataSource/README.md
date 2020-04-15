@@ -1,4 +1,4 @@
-Initialization of database
+# Initialization of database
 
 inlcludes book table
           publisher table
